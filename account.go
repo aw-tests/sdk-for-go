@@ -267,29 +267,6 @@ func (srv *Account) DeleteAccountSession(Id string) (map[string]interface{}, err
 	return srv.client.Call("DELETE", path, nil, params)
 }
 
-// CreateAccountVerification use this endpoint to send a verification message
-// to your user email address to confirm they are the valid owners of that
-// address. Both the **userId** and **secret** arguments will be passed as
-// query parameters to the URL you have provider to be attached to the
-// verification email. The provided URL should redirect the user back for your
-// app and allow you to complete the verification process by verifying both
-// the **userId** and **secret** parameters. Learn more about how to [complete
-// the verification process](/docs/account#updateAccountVerification). 
-// 
-// Please note that in order to avoid a [Redirect
-// Attack](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md)
-// the only valid redirect URLs are the ones from domains you have set when
-// adding your platforms in the console interface.
-func (srv *Account) CreateAccountVerification(Url string) (map[string]interface{}, error) {
-	path := "/account/verification"
-
-	params := map[string]interface{}{
-		"url": Url,
-	}
-
-	return srv.client.Call("POST", path, nil, params)
-}
-
 // UpdateAccountVerification use this endpoint to complete the user email
 // verification process. Use both the **userId** and **secret** parameters
 // that were attached to your app URL to verify the user email ownership. If
