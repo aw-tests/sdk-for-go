@@ -15,7 +15,7 @@ func main() {
         client: &client
     }
 
-    var response, error := service.Create("[NAME]", , [], "", "5")
+    var response, error := service.Create("[NAME]", , [], "", 0)
 
     if error != nil {
         panic(error)
