@@ -1,4 +1,4 @@
-package appwrite
+package 
 
 import (
 	"fmt"

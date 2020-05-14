@@ -1,6 +1,6 @@
-package appwrite
+package 
 
-// NewClient initializes a new Appwrite client
+// NewClient initializes a new  client
 func NewClient() Client {
 	return Client{}
 }
